@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Page | Quite Easy Done</title>
+    <link rel="stylesheet" href="css/store.css">
+    <script>
+  function addToCart(name, price, img) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ name, price, img, quantity: 1 });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.location.href = "cart.html"; // يوديه على صفحة الكارت
+  }
+</script>
+</head>
+<body>
+    
+  <header class="site-header">
+    <div class="container nav-row">
+     <div class="logo">
+        <img src="Imgs/high-1757870090.jpg" alt="Logo">
+        <a href="index.html">Quite Easy Done</a>
+     </div>
+    <!-- <img src="Imgs/WhatsApp Image 2025-09-11 at 15.19.37_d6b5bce8.jpg" alt="Logo" class="logo_img">
+      <a class="brand" href="index.html">All Might</a> -->
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" data-link>About</a>
+        <a href="services.html" data-link>Courses</a>
+        <a href="store.html" data-link>Store</a>
+        <a href="#account">My Account</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </header>
+
+<section class="content" id="store">
+    <h2>Our Courses Store</h2>
+    <div class="store">
+      <div class="product-card">
+        <h3>3rd Secondary Statistics</h3>
+        <img src="https://i.ytimg.com/vi/Wemv9R1YhWo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDinhrMSo3y4NfSriEiDHd2X9RZHg" alt="T-shirt" class="T-shirt">
+        <p>EP.1 , Rules and Notes</p>
+        <button class="btn" onclick="addToCart('3rd Secondary Statistics , EP.1 , Rules and Notes', 40, 'Imgs/tshirt.png')">Add to Cart</button>
+
+
+      </div>
+      <div class="product-card">
+        <h3>3rd Secondary Statics</h3>
+        <img src="https://i.ytimg.com/vi/kz6ZF6QQb3o/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCUIJrVpg97uDHnx1sjvsG1GWsVLA" alt="Journal" class="journal">
+        <p>Final Revision</p>
+        <button class="btn" onclick="addToCart('3rd Secondary Statics , Final Revision', 30, 'Imgs/Journal.png')">Add to Cart</button>
+
+
+      </div>
+      <div class="product-card">
+        <h3>3rd Secondary Calculus</h3>
+        <img src="https://i.ytimg.com/vi/1iU_P99umd8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBhO3M-8eK-Z1B9cVQ6FvC2iAJn4A" alt="Mug">
+        <p>Final Revision</p>
+        <button class="btn" onclick="addToCart('3rd Secondary Calculus , Final Revision', 20, 'https://i.ytimg.com/vi/1iU_P99umd8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBhO3M-8eK-Z1B9cVQ6FvC2iAJn4A')">Add to Cart</button>
+
+
+      </div>
+    </div>
+  </section>
+  </body>
+  </html>

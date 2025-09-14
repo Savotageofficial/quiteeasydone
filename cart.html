@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart - All Might</title>
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+ <link rel="stylesheet" href="css/cart.css">
+ <script>
+  function loadCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let container = document.getElementById("cart-container");
+    let total = 0;
+    container.innerHTML = "";
+
+    cart.forEach((item, index) => {
+      total += item.price * item.quantity;
+      container.innerHTML += `
+        <div class="cart-item">
+          <img src="${item.img}" alt="${item.name}">
+          <h3>${item.name}</h3>
+          <p>$${item.price}</p>
+          <div class="quantity">
+            <label>Qty:</label>
+            <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)">
+          </div>
+          <button onclick="removeItem(${index})">Remove</button>
+        </div>
+      `;
+    });
+
+    document.getElementById("cart-total").innerText = "Total: $" + total;
+  }
+
+  function updateQuantity(index, qty) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    cart[index].quantity = parseInt(qty);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+  }
+
+  function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+  }
+
+  window.onload = loadCart;
+</script>
+
+</head>
+<body>
+
+    <header class="site-header">
+    <div class="container nav-row">
+     <div class="logo">
+        <img src="Imgs/WhatsApp Image 2025-09-11 at 15.19.37_d6b5bce8.jpg" alt="Logo">
+        <a href="index.html">All Might</a>
+     </div>
+    <!-- <img src="Imgs/WhatsApp Image 2025-09-11 at 15.19.37_d6b5bce8.jpg" alt="Logo" class="logo_img">
+      <a class="brand" href="index.html">All Might</a> -->
+      <nav class="main-nav">
+        <a href="index.html" data-link>Home</a>
+        <a href="about.html" data-link>About</a>
+        <a href="services.html" data-link>Services</a>
+        <a href="store.html" data-link>Store</a>
+        <a href="index.html#account">My Account</a>
+        <a href="index.html#contact">Contact</a>
+        
+      </nav>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </header>
+    <div class="hero-text">
+      <h2>My Cart</h2>
+      <p>Review your selected products and proceed to checkout.</p>
+    </div>
+  </header>
+
+  <!-- <section class="cart-container">
+    <div class="cart-item">
+      <img src="Imgs/tshirt.png" alt="T-shirt">
+      <h3>Signature T-Shirt</h3>
+      <p>$20</p>
+      <div class="quantity">
+        <label>Qty:</label>
+        <input type="number" value="1" min="1">
+      </div>
+    </div>
+
+    <div class="cart-item">
+      <img src="Imgs/journal.png" alt="Journal">
+      <h3>Motivation Journal</h3>
+      <p>$15</p>
+      <div class="quantity">
+        <label>Qty:</label>
+        <input type="number" value="1" min="1">
+      </div>
+    </div>
+
+    <div class="cart-item">
+      <img src="Imgs/mug.png" alt="Mug">
+      <h3>All Might Mug</h3>
+      <p>$10</p>
+      <div class="quantity">
+        <label>Qty:</label>
+        <input type="number" value="1" min="1">
+      </div>
+    </div>
+
+    <div class="total">Total: $45</div>
+    <button class="checkout-btn">Proceed to Checkout</button>
+  </section> -->
+
+  <section class="cart-container" id="cart-container">
+  
+</section>
+<div class="total" id="cart-total"></div>
+<button class="checkout-btn">Proceed to Checkout</button>
+
+
+  <footer>
+    <p>&copy; 2025 All Might. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
