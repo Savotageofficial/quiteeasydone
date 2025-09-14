@@ -1,0 +1,153 @@
+/* ------------------- Global Styles ------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+.container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--white); border-bottom: 1px solid #e5e7eb;
+}
+.nav-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+/* .brand { font-weight: 700; font-size: 1.2rem; color: var(--blue); text-decoration: none; } */
+.main-nav a { margin-left: 20px; color: var(--blue); text-decoration: none; }
+.main-nav a.cta { background: var(--blue); color: white; padding: 8px 14px; border-radius: 8px; }
+.nav-toggle { display: none; }
+
+/* .logo_img {
+  width: 40px;   
+  height: 40px;  
+  border-radius: 50%; 
+  object-fit: cover; 
+} */
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img{
+    width: 60px;
+    height:60px;
+    border-radius: 50%; 
+}
+
+.logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/* ------------------- Hero Section ------------------- */
+.page-hero {
+  background: linear-gradient(rgba(10,26,47,0.8), rgba(10,26,47,0.8)),
+              url("../Imgs/hero-bg.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.page-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.page-hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* ------------------- Values Section ------------------- */
+.values {
+  padding: 70px 50px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.values h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #0a1a2f;
+}
+
+.values ul {
+  list-style: none;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.values li {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  padding-left: 10px;
+  border-left: 3px solid #0077ff;
+}
+
+/* ------------------- Footer ------------------- */
+footer {
+  background: #0a1a2f;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 50px;
+}
+
+/* ------------------- Animations ------------------- */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------- Responsive ------------------- */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 15px;
+  }
+
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .page-hero p {
+    font-size: 1rem;
+  }
+
+  .values {
+    padding: 50px 20px;
+  }
+}

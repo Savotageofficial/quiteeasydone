@@ -1,0 +1,113 @@
+/* General Styles */
+:root {
+  --blue: #0a1a3c; 
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--white); border-bottom: 1px solid #e5e7eb;
+}
+.nav-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+/* .brand { font-weight: 700; font-size: 1.2rem; color: var(--blue); text-decoration: none; } */
+.main-nav a { margin-left: 20px; color: var(--blue); text-decoration: none; font-family: Arial }
+.main-nav a.cta { background: var(--blue); color: white; padding: 8px 14px; border-radius: 8px; }
+.nav-toggle { display: none; }
+
+/* .logo_img {
+  width: 40px;   
+  height: 40px;  
+  border-radius: 50%; 
+  object-fit: cover; 
+} */
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img{
+    width: 60px;
+    height:60px;
+    border-radius: 50%; 
+}
+
+.logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--blue);
+    text-decoration: none;
+}
+
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  background: linear-gradient(135deg, #0a1a3c, #001f54);
+  color: white;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  padding: 50px;
+  background: #fff;
+}
+
+.service-card {
+  background: #f4f6fb;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card iframe{
+  border-radius: 20px;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.service-card h2 {
+  color: #0a1a3c;
+  margin-bottom: 12px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0a1a3c;
+  color: white;
+  font-size: 0.9rem;
+}
+
+
